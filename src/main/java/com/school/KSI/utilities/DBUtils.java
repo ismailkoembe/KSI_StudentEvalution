@@ -56,6 +56,7 @@ public class DBUtils {
      *
      * */
     public static List<List<Object>> getQueryResultList(String query){
+            createConnection();
             executeQuery(query);
             List<List<Object>> rowList= new ArrayList<>();
             ResultSetMetaData rsmd;

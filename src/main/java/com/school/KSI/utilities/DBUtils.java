@@ -74,5 +74,11 @@ public class DBUtils {
             }
         return rowList;
     }
+    /**
+     * Methods return just one row
+     * */
+    public static List<Object> getRowList(String query) {
+        return getQueryResultList(query).get(0);
+    }
 
 }

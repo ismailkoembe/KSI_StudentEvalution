@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Repository("student")
 public class StudentDao {
@@ -26,4 +28,11 @@ public class StudentDao {
         List<List<Object>> allStudents = DBUtils.getQueryResultList("Select * from students");
         return allStudents;
     }
+
+
+    public List<Object> selectStudentById(int id) {
+        List<Object> studentById =DBUtils.getRowList("Select * from students where student_id =\""+id+"\"");
+        return studentById;
+    }
+
 }

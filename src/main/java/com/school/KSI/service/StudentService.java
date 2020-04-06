@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -23,5 +24,9 @@ public class StudentService {
 
     public List<List<Object>> getAllStudent() {
         return studentDao.selectAllStudents();
+    }
+
+    public List<Object> studentById(int id) {
+        return studentDao.selectStudentById(id);
     }
 }
